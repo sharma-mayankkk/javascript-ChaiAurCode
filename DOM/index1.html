@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        * {
+            background-color: #212121;
+            ;
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="bg-black">
+    <!-- <div id="example">
+        <h1  class="heading">DOM learning</h1>
+        <p id="text" class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi suscipit aperiam, libero vero velit adipisci, dolorem amet recusandae dolor iusto animi ipsa quae. Et nihil debitis enim unde repudiandae temporibus.
+    </p>
+    <ul>
+        <li>Hell</li>
+        <li>oo</li>
+        <li>world</li>
+    </ul>
+
+
+    </div>
+    <button>Click me</button> -->
+
+    <div class="parent">
+        <div class="day">Mon</div>
+        <div class="day">Tue</div>
+        <div class="day">Wed</div>
+        <div class="day">Thu</div>
+        <div class="day">Fri</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+    // console.log(parent)
+    // console.log(parent.children)
+    // console.log(parent.children[1].innerHTML)
+
+    //we can iterate the all children of a parent.
+    for(let i=0; i<parent.children.length; i++){
+        console.log(parent.children[i].style.color = 'red')
+    }
+
+    //we can also access the first element child and last element child.
+    console.log(parent.firstElementChild.innerHTML)
+
+    const dayOne = document.querySelector('.day')
+    console.log(dayOne)
+    //we can access the parent element of by a child.
+    console.log(dayOne.parentElement);
+
+    //also access sibling element.
+    console.log(dayOne.nextElementSibling)
+
+
+</script>
+
+</html>
