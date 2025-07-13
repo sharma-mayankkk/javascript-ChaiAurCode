@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<style>
+    *{
+        background-color: #212121;
+        color: antiquewhite;
+    }
+</style>
+<body>
+    <h1>Virat kohli</h1>
+    <button id="stop">Retire</button>
+</body>
+<script>
+    const kohli  = ()=>{
+        console.log("Virat Kohli")
+    }
+    
+    const changeText = ()=>{
+        document.querySelector('h1').innerHTML = "King Kohli"
+    }
+
+    //now we can set timeout function to perform a task after a particular time 
+    const chagneMe = setTimeout(changeText,2000)
+
+    //cleartimeout can stop any setTimeout on any particular event 
+    document.querySelector('#stop').addEventListener('click', (e)=>{
+        clearTimeout(chagneMe)
+        console.log('Stopped')
+    })
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</html>
