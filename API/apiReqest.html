@@ -18,15 +18,20 @@
 </body>
 <script>
     const reqestUrl = 'https://api.github.com/users/sharma-mayankkk'
+    // Create a new XMLHttpRequest object
     const xhr = new XMLHttpRequest();
+    // Initialize a GET request to the specified URL
     xhr.open('GET', reqestUrl)
-    xhr.onreadystatechange = function(){
-        console.log(xhr.readyState);
-        if (xhr.readyState === 4){
-            const data = JSON.parse(this.responseText)
-            console.log(data.name);
+    // This function is called whenever the readyState property changes
+    xhr.onreadystatechange = function () {
+        console.log(xhr.readyState); // Logs the current state of the request
+        // readyState 4 means the request is complete
+        if (xhr.readyState === 4) {
+            const data = JSON.parse(this.responseText) // Parse the JSON response from the server
+            console.log(data.name); // Log the user's name from the data
         }
     }
+    // Send the request to the server
     xhr.send();
 </script>
 
