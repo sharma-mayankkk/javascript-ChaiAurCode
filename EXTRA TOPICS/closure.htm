@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+    <button id="black">Black</button>
+    <button id="red">Red</button>
+<body>
+
+</body>
+<script>
+    // CLOSURE
+    function makeFunc() {
+        const name = "Mozilla";
+        function displayName() {
+            console.log(name);
+        }
+        return displayName;
+    }
+   
+    const myFunc = makeFunc();
+    myFunc()    
+
+
+
+    //LEXICAL SCOPING:
+    function outer() {
+        let username = "sharma"
+        function inner() {
+            let secret = "secret code:"
+            console.log('inner:', username)//variable that is decleared in inside a function can be accessed by the function that is declared inside the outer function
+        }
+
+        function innerTwo() {
+            console.log('secret', secret) // sibling can't share resource 
+        }
+
+        inner();
+    }
+    outer()
+    console.log('outer:', username) //but the same variable can't accessed globally
+
+
+
+</script>
+    
+<script>
+    // document.getElementById('black').onclick = function(){
+    //     document.body.style.backgroundColor = 'black'
+    // }
+
+    // document.getElementById('red').onclick = function(){
+    //     document.body.style.backgroundColor = 'maroon'
+    // }
+
+
+       //REAL EXAMPLE OF LEXICAL SCOPING:
+    
+        // clickHandler is a closure that "remembers" the color argument.
+        // When the button is clicked, it sets the background color using the remembered value.
+        function clickHandler(color){
+            return function(){
+                document.body.style.backgroundColor = `${color}`
+            }
+        }
+    
+        // Assigns the closure to each button's onclick event, passing the desired color.
+        document.getElementById('red').onclick = clickHandler("red")
+        document.getElementById('black').onclick = clickHandler('black')
+
+        
+
+
+
+
+
+
+</script>
+</html>
